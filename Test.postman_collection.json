@@ -1,0 +1,208 @@
+{
+	"info": {
+		"name": "Test",
+		"_postman_id": "5cb5dcb4-a963-97fd-1e59-64d79acc9f2d",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "{{base}}/{{workload}}",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Notes for Custom Workload\");",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBUElDbGllbnQiLCJpYXQiOjE1MDE2NDQ0OTAsImlzcyI6Ik5ldEFwcCwgSW5jLiIsImF1ZCI6Ik5ldEFwcCwgSW5jLiIsImp0aSI6IlRSVCIsImV4cCI6MTkxMTc1MzAwMH0.jXmP4zXV9EogoYELuOMjShQsyTrHaMy4TPzupbtH5nA3WR8c7V07gcBQRP2p0FOoxnbPtsk57cm6zqNU_Lk3LQ"
+					},
+					{
+						"key": "client-id",
+						"value": "TRT"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"basicSizingInfo\": {\r\n        \"sizingTitle\": \"Sizing Title - 1\",\r\n        \"customerName\": \"Untitled\",\r\n        \"opportunityId\": \"Untitled\",\r\n        \"favorite\": false,\r\n        \"sizingDone\": false,\r\n        \"emailId\": \"jyothishree.badiger@netapp.com\",\r\n        \"location\": \"\",\r\n        \"region\": \"\",\r\n        \"seName\": \"\",\r\n        \"opportunityType\": \"\",\r\n        \"notes\": \"\",\r\n        \"sizingType\": \"forward\",\r\n        \"incomplete\": false,\r\n        \"savedSizing\": false\r\n      },\r\n      \"workloads\": [\r\n        {\r\n          \"workloadId\": 1,\r\n          \"workloadTitle\": \"Custom Workload 1\",\r\n          \"workloadType\": \"custom\",\r\n          \"workloadSelected\": true,\r\n          \"opsInfoLst\": null,\r\n          \"canBePlacedOnSharedAggr\": true,\r\n          \"canBeSplitOnDiffAggr\": true,\r\n          \"singleNodeTraffic\": true,\r\n          \"snapMirrorEnabled\": false,\r\n          \"snapMirrorRole\": \"SM_SOURCE\",\r\n          \"snapMirrorType\": \"MIRROR_BRE\",\r\n          \"snapMirrorDataChangePcnt\": 10,\r\n          \"snapMirrorRPO\": 15,\r\n          \"snapMirrorNoOfMirrors\": 1,\r\n          \"snapMirrorMaxBandwidth\": 100,\r\n          \"snapMirrorIncomingRate\": 100,\r\n          \"snapMirrorSchedule\": \"NORMAL_TIME\",\r\n          \"snapMirrorUpdateWindow\": 12,\r\n          \"deduplicationEabled\": false,\r\n          \"deduplicationTimeInterval\": 0,\r\n          \"compressionEnabled\": false,\r\n          \"compressionRatio\": 0,\r\n          \"compactionEnabled\": false,\r\n          \"compactionRatio\": 0,\r\n          \"storageEfficiency\": 2,\r\n          \"vgeEnabled\": false,\r\n          \"flexgroupEnabled\": false,\r\n          \"fabricPoolEnabled\": false,\r\n          \"fabricPoolType\": \"\",\r\n          \"flashPoolEnabled\": true,\r\n          \"inlineDedupeEnabled\": false,\r\n          \"backgroundDedupeEnabled\": false,\r\n          \"workloadPath\": null,\r\n          \"capacity\": 1000,\r\n          \"throughput\": 100,\r\n          \"throughputType\": \"IOPS\",\r\n          \"otherOps\": 0,\r\n          \"rndRdLatency\": 20,\r\n          \"rndReadPcnt\": 25,\r\n          \"rndWritePcnt\": 25,\r\n          \"seqReadPcnt\": 25,\r\n          \"seqWritePcnt\": 25,\r\n          \"activeWorkingSetPcnt\": 5,\r\n          \"protocol\": \"NFS\",\r\n          \"rndReadSize\": \"IO_SIZE_8K\",\r\n          \"rndWriteSize\": \"IO_SIZE_8K\",\r\n          \"rndRead\": 0,\r\n          \"rndWrite\": 0,\r\n          \"seqReadSize\": \"IO_SIZE_32K\",\r\n          \"seqWriteSize\": \"IO_SIZE_32K\",\r\n          \"workloadIOType\": \"mixed\",\r\n          \"protocolVersion\": null,\r\n          \"requiredCapacity\": 0,\r\n          \"randomOverWritePcnt\": 0,\r\n          \"deduplicationPcnt\": 20\r\n        }\r\n      ]\r\n      }"
+				},
+				"url": {
+					"raw": "{{base}}/{{workload}}",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"{{workload}}"
+					]
+				},
+				"description": "Test workload API"
+			},
+			"response": []
+		},
+		{
+			"name": "{{base}}/{{autosuggest}}",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"SUCCESS\");",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBUElDbGllbnQiLCJpYXQiOjE1MDE2NDQ0OTAsImlzcyI6Ik5ldEFwcCwgSW5jLiIsImF1ZCI6Ik5ldEFwcCwgSW5jLiIsImp0aSI6IlRSVCIsImV4cCI6MTkxMTc1MzAwMH0.jXmP4zXV9EogoYELuOMjShQsyTrHaMy4TPzupbtH5nA3WR8c7V07gcBQRP2p0FOoxnbPtsk57cm6zqNU_Lk3LQ"
+					},
+					{
+						"key": "client-id",
+						"value": "TRT"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"workloads\":[{\"workloadType\":\"custom\",\"workloadId\":1,\"workloadTitle\":\"Untitled 1\",\"canBePlacedOnSharedAggr\":true,\"canBeSplitOnDiffAggr\":true,\"singleNodeTraffic\":true,\"snapMirrorEnabled\":false,\"snapMirrorRole\":\"SM_SOURCE\",\"snapMirrorType\":\"MIRROR_BRE\",\"snapMirrorDataChangePcnt\":10,\"snapMirrorRPO\":15,\"snapMirrorNoOfMirrors\":1,\"snapMirrorMaxBandwidth\":100,\"snapMirrorIncomingRate\":100,\"snapMirrorSchedule\":\"NORMAL_TIME\",\"snapMirrorUpdateWindow\":12,\"deduplicationEabled\":false,\"deduplicationTimeInterval\":0,\"compressionEnabled\":false,\"compressionRatio\":0,\"compactionEnabled\":false,\"compactionRatio\":0,\"storageEfficiency\":2,\"vgeEnabled\":false,\"flexgroupEnabled\":false,\"fabricPoolEnabled\":false,\"fabricPoolType\":null,\"workloadSelected\":true,\"flashPoolEnabled\":true,\"inlineDedupeEnabled\":false,\"backgroundDedupeEnabled\":false,\"capacity\":10,\"throughput\":10000,\"throughputType\":\"IOPS\",\"rndRdLatency\":20,\"rndReadPcnt\":25,\"rndWritePcnt\":25,\"seqReadPcnt\":25,\"seqWritePcnt\":25,\"activeWorkingSetPcnt\":5,\"protocol\":\"FCP\",\"rndReadSize\":\"IO_SIZE_8K\",\"rndWriteSize\":\"IO_SIZE_8K\",\"seqReadSize\":\"IO_SIZE_64K\",\"seqWriteSize\":\"IO_SIZE_64K\",\"workloadIOType\":\"mixed\",\"opsInfoLst\":null,\"protocolVersion\":null,\"randomOverWritePcnt\":0,\"deduplicationPcnt\":20}],\"hardware\":{\"autoSuggest\":true,\"deploymentMode\":\"Clustered ONTAP\",\"dataONTAPVersion\":\"ONTAP_9_2_0\",\"degradedPerfFlagOnHA\":true,\"diskType\":[\"SAS\",\"SATA\",\"SSD\"],\"flashAcclOptions\":[\"None\",\"FlashCache\",\"FlashPool\"],\"diskWklMap\":null,\"metroClusterSiteWklMap\":null,\"haFlag\":true,\"defaultDiskShelf\":\"\",\"defaultDriveType\":[],\"fcCardType\":\"AUTO_SUGGEST\",\"fcCardsPerCntrl\":1,\"fcCardCapacity\":\"0\",\"fpSSDDiskCapcity\":\"AUTO-SUGGEST\",\"fpCapacityPerCntrl\":0,\"sysHeadRoomPct\":30,\"mapToFullShelves\":false,\"capacityResrvPcnt\":0,\"spareDisksPerNode\":2,\"sysAge\":\"Empty System\",\"noOfHAPairs\":1,\"flashCacheFlag\":false,\"storagePoolEnabled\":true,\"metroclusterEnabled\":false,\"deploymentOptions\":null,\"driveTypePerWorkloadEnabled\":false,\"mcc2NodeEnabled\":false,\"adpv2Enabled\":false,\"platformMap\":null,\"latencyCurve\":false},\"basicSizingInfo\":{\"sizingTitle\":\"Untitled Sizing 1\",\"customerName\":\"Untitled\",\"opportunityId\":\"Untitled\",\"favorite\":false,\"sizingDone\":true,\"emailId\":\"priyadarshi.chaudhuri@netapp.com\",\"location\":\"\",\"region\":\"\",\"seName\":\"\",\"opportunityType\":\"\",\"notes\":\"\",\"sizingType\":\"forward\",\"incomplete\":false,\"savedSizing\":false}}"
+				},
+				"url": {
+					"raw": "{{base}}/spm/services/sizing/autosuggest",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"spm",
+						"services",
+						"sizing",
+						"autosuggest"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "{{base}}/{{forward}}",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"SUCCESS\");",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBUElDbGllbnQiLCJpYXQiOjE1MDE2NDQ0OTAsImlzcyI6Ik5ldEFwcCwgSW5jLiIsImF1ZCI6Ik5ldEFwcCwgSW5jLiIsImp0aSI6IlRSVCIsImV4cCI6MTkxMTc1MzAwMH0.jXmP4zXV9EogoYELuOMjShQsyTrHaMy4TPzupbtH5nA3WR8c7V07gcBQRP2p0FOoxnbPtsk57cm6zqNU_Lk3LQ"
+					},
+					{
+						"key": "client-id",
+						"value": "TRT"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"workloads\":[{\"workloadType\":\"custom\",\"workloadId\":1,\"workloadTitle\":\"Untitled 1\",\"canBePlacedOnSharedAggr\":true,\"canBeSplitOnDiffAggr\":true,\"singleNodeTraffic\":true,\"snapMirrorEnabled\":false,\"snapMirrorRole\":\"SM_SOURCE\",\"snapMirrorType\":\"MIRROR_BRE\",\"snapMirrorDataChangePcnt\":10,\"snapMirrorRPO\":15,\"snapMirrorNoOfMirrors\":1,\"snapMirrorMaxBandwidth\":100,\"snapMirrorIncomingRate\":100,\"snapMirrorSchedule\":\"NORMAL_TIME\",\"snapMirrorUpdateWindow\":12,\"deduplicationEabled\":false,\"deduplicationTimeInterval\":0,\"compressionEnabled\":false,\"compressionRatio\":0,\"compactionEnabled\":false,\"compactionRatio\":0,\"storageEfficiency\":0,\"vgeEnabled\":false,\"flexgroupEnabled\":false,\"fabricPoolEnabled\":false,\"fabricPoolType\":null,\"workloadSelected\":true,\"flashPoolEnabled\":true,\"inlineDedupeEnabled\":false,\"backgroundDedupeEnabled\":false,\"capacity\":10,\"throughput\":10000,\"throughputType\":\"IOPS\",\"rndRdLatency\":20,\"rndReadPcnt\":25,\"rndWritePcnt\":25,\"seqReadPcnt\":25,\"seqWritePcnt\":25,\"activeWorkingSetPcnt\":5,\"protocol\":\"NFS\",\"rndReadSize\":\"IO_SIZE_8K\",\"rndWriteSize\":\"IO_SIZE_8K\",\"seqReadSize\":\"IO_SIZE_32K\",\"seqWriteSize\":\"IO_SIZE_32K\",\"workloadIOType\":\"mixed\",\"opsInfoLst\":null,\"protocolVersion\":null,\"randomOverWritePcnt\":0,\"deduplicationPcnt\":20}],\"hardware\":{\"autoSuggest\":false,\"deploymentMode\":\"Clustered ONTAP\",\"dataONTAPVersion\":\"ONTAP_9_2_0\",\"controllerPlatform\":[\"FAS8040\",\"FAS8200\"],\"degradedPerfFlagOnHA\":true,\"diskType\":[\"SAS\",\"SATA\",\"SSD\"],\"flashAcclOptions\":[\"None\",\"FlashCache\"],\"diskWklMap\":{},\"metroClusterSiteWklMap\":{},\"haFlag\":true,\"defaultDiskShelf\":\"DS224C\",\"defaultDriveType\":[\"X364A\", \"X670A\"],\"fcCardType\":\"AUTO_SUGGEST\",\"fcCardsPerCntrl\":1,\"fcCardCapacity\":\"0\",\"fpSSDDiskCapcity\":\"\",\"fpCapacityPerCntrl\":0,\"sysHeadRoomPct\":30,\"mapToFullShelves\":false,\"capacityResrvPcnt\":0,\"spareDisksPerNode\":2,\"sysAge\":\"Empty System\",\"noOfHAPairs\":1,\"flashCacheFlag\":false,\"storagePoolEnabled\":false,\"metroclusterEnabled\":false,\"deploymentOptions\":[\"\"],\"driveTypePerWorkloadEnabled\":false,\"mcc2NodeEnabled\":false,\"adpv2Enabled\":false,\"platformMap\":null,\"latencyCurve\":false},\"basicSizingInfo\":{\"sizingTitle\":\"Untitled Sizing 1\",\"customerName\":\"Untitled\",\"opportunityId\":\"Untitled\",\"favorite\":false,\"sizingDone\":true,\"emailId\":\"priyadarshi.chaudhuri@netapp.com\",\"location\":\"\",\"region\":\"\",\"seName\":\"\",\"opportunityType\":\"\",\"notes\":\"\",\"sizingType\":\"forward\",\"incomplete\":false,\"savedSizing\":false}}"
+				},
+				"url": {
+					"raw": "{{base}}/{{forward}}",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"{{forward}}"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "{{base}}/{{reverse}}",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"SUCCESS\");",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBUElDbGllbnQiLCJpYXQiOjE1MDE2NDQ0OTAsImlzcyI6Ik5ldEFwcCwgSW5jLiIsImF1ZCI6Ik5ldEFwcCwgSW5jLiIsImp0aSI6IlRSVCIsImV4cCI6MTkxMTc1MzAwMH0.jXmP4zXV9EogoYELuOMjShQsyTrHaMy4TPzupbtH5nA3WR8c7V07gcBQRP2p0FOoxnbPtsk57cm6zqNU_Lk3LQ"
+					},
+					{
+						"key": "client-id",
+						"value": "TRT"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"hardware\": {\r\n        \"autoSuggest\": false,\r\n        \"quotable\": false,\r\n        \"deploymentMode\": \"Clustered ONTAP\",\r\n        \"controllerPlatform\": [\r\n          \"FAS8040\"\r\n        ],\r\n        \"diskWklMap\": null,\r\n        \"metroClusterSiteWklMap\": {},\r\n        \"platformMap\": null,\r\n        \"dataONTAPVersion\": \"ONTAP_9_2_0\",\r\n        \"degradedPerfFlagOnHA\": true,\r\n        \"diskType\": [],\r\n        \"flashAcclOptions\": [\r\n          \"None\",\r\n          \"FlashCache\",\r\n          \"FlashPool\"\r\n        ],\r\n        \"haFlag\": true,\r\n        \"defaultDiskShelf\": null,\r\n        \"defaultDriveType\": [],\r\n        \"fcCardType\": \"AUTO_SUGGEST\",\r\n        \"fcCardsPerCntrl\": 1,\r\n        \"fcCardCapacity\": 0,\r\n        \"fpSSDDiskCapcity\": \"AUTO-SUGGEST\",\r\n        \"fpCapacityPerCntrl\": 0,\r\n        \"sysHeadRoomPct\": 0,\r\n        \"mapToFullShelves\": false,\r\n        \"capacityResrvPcnt\": 0,\r\n        \"spareDisksPerNode\": 2,\r\n        \"sysAge\": \"Empty System\",\r\n        \"noOfHAPairs\": 1,\r\n        \"flashCacheFlag\": false,\r\n        \"storagePoolEnabled\": false,\r\n        \"metroclusterEnabled\": false,\r\n        \"deploymentOptions\": [],\r\n        \"driveTypePerWorkloadEnabled\": false,\r\n        \"mcc2NodeEnabled\": false,\r\n        \"mccDistance\": null,\r\n        \"mccType\": null,\r\n        \"adpv2Enabled\": false,\r\n        \"latencyCurve\": false\r\n      },\r\n      \"basicSizingInfo\": {\r\n        \"sizingTitle\": \"Sizing Title - 1\",\r\n        \"customerName\": \"Untitled\",\r\n        \"opportunityId\": \"Untitled\",\r\n        \"favorite\": false,\r\n        \"sizingDone\": false,\r\n        \"emailId\": \"jyothishree.badiger@netapp.com\",\r\n        \"location\": \"\",\r\n        \"region\": \"\",\r\n        \"seName\": \"\",\r\n        \"opportunityType\": \"\",\r\n        \"notes\": \"\",\r\n        \"sizingType\": \"reverse\",\r\n        \"incomplete\": false,\r\n        \"savedSizing\": false\r\n      },\r\n      \"workloads\": [\r\n        {\r\n          \"workloadId\": 1,\r\n          \"workloadTitle\": \"Custom Workload 1\",\r\n          \"workloadType\": \"custom\",\r\n          \"workloadSelected\": true,\r\n          \"opsInfoLst\": null,\r\n          \"canBePlacedOnSharedAggr\": true,\r\n          \"canBeSplitOnDiffAggr\": true,\r\n          \"singleNodeTraffic\": true,\r\n          \"snapMirrorEnabled\": false,\r\n          \"snapMirrorRole\": \"SM_SOURCE\",\r\n          \"snapMirrorType\": \"MIRROR_BRE\",\r\n          \"snapMirrorDataChangePcnt\": 10,\r\n          \"snapMirrorRPO\": 15,\r\n          \"snapMirrorNoOfMirrors\": 1,\r\n          \"snapMirrorMaxBandwidth\": 100,\r\n          \"snapMirrorIncomingRate\": 100,\r\n          \"snapMirrorSchedule\": \"NORMAL_TIME\",\r\n          \"snapMirrorUpdateWindow\": 12,\r\n          \"deduplicationEabled\": false,\r\n          \"deduplicationTimeInterval\": 0,\r\n          \"compressionEnabled\": false,\r\n          \"compressionRatio\": 0,\r\n          \"compactionEnabled\": false,\r\n          \"compactionRatio\": 0,\r\n          \"storageEfficiency\": 0,\r\n          \"vgeEnabled\": false,\r\n          \"flexgroupEnabled\": false,\r\n          \"fabricPoolEnabled\": false,\r\n          \"fabricPoolType\": \"\",\r\n          \"flashPoolEnabled\": true,\r\n          \"inlineDedupeEnabled\": false,\r\n          \"backgroundDedupeEnabled\": false,\r\n          \"workloadPath\": null,\r\n          \"capacity\": 10,\r\n          \"throughput\": 10000,\r\n          \"throughputType\": \"IOPS\",\r\n          \"otherOps\": 0,\r\n          \"rndRdLatency\": 20,\r\n          \"rndReadPcnt\": 25,\r\n          \"rndWritePcnt\": 25,\r\n          \"seqReadPcnt\": 25,\r\n          \"seqWritePcnt\": 25,\r\n          \"activeWorkingSetPcnt\": 5,\r\n          \"protocol\": \"NFS\",\r\n          \"rndReadSize\": \"IO_SIZE_8K\",\r\n          \"rndWriteSize\": \"IO_SIZE_8K\",\r\n          \"rndRead\": 0,\r\n          \"rndWrite\": 0,\r\n          \"seqReadSize\": \"IO_SIZE_32K\",\r\n          \"seqWriteSize\": \"IO_SIZE_32K\",\r\n          \"workloadIOType\": \"mixed\",\r\n          \"protocolVersion\": null,\r\n          \"requiredCapacity\": 0,\r\n          \"randomOverWritePcnt\": 0,\r\n          \"deduplicationPcnt\": 20\r\n        }\r\n      ],\r\n      \"aggrColl\": [\r\n        {\r\n          \"siteId\": \"\",\r\n          \"deploymentMode\": false,\r\n          \"hddDriveQty\": 5,\r\n          \"partHddDriveQty\": 0,\r\n          \"ssdDriveQty\": 0,\r\n          \"wklsAssigned\": [\r\n            1\r\n          ],\r\n          \"allocationInfo\": {},\r\n          \"aggrName\": \"Aggr_1\",\r\n          \"nodeId\": \"1\",\r\n          \"shelfType\": \"DS224C\",\r\n          \"hddDriveType\": \"X357A\",\r\n          \"aggrId\": 1\r\n        }\r\n      ],\r\n      \"storagePools\": []\r\n      }"
+				},
+				"url": {
+					"raw": "{{base}}/spm/services/sizing/reversesizing",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"spm",
+						"services",
+						"sizing",
+						"reversesizing"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
