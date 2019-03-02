@@ -5,3 +5,5 @@ add line
 add
 
 again
+
+merge
